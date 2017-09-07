@@ -60,11 +60,11 @@ def extract_data(data_file):
             # if daytype is not a string, we're on the wrong sheet
             break
         if 'weekday' in daytype:
-            daytype = 'weekday'
+            daytype = 'Weekday'
         elif 'saturday' in daytype:
-            daytype = 'saturday'
+            daytype = 'Saturday'
         elif 'sunday' in daytype:
-            daytype = 'sunday'
+            daytype = 'Sunday'
         else:
             break
         # Limiting column index: left of the column containing the term 'Exits'
