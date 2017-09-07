@@ -1,5 +1,9 @@
-# MSAN 691 HW # 3: BART Data
-# Sep 5, 2017
+"""
+MSAN 691 HW # 3: BART Data
+Sep 7, 2017
+Group Members:
+Holly Capell, Jason Liu, Kunal Kotian, Sangyu Shen, Siavash Mortezavi
+"""
 
 import os
 import re
@@ -175,20 +179,3 @@ def ProcessBart(tmpDir, dataDir, SQLConn=None, schema='cls', table='bart'):
         SQLConn.commit()
         SQLConn.rollback()
         SQLConn.close()
-
-
-# Tests--------------------------------------------------------------------
-# zipped files here:
-dataDir = '/Users/kunal/Desktop/MSAN_Coursework/691/' \
-                       'Homeworks/HW3/bart_data'
-# unzipped files here:
-tmpDir = '/Users/kunal/Desktop/MSAN_Coursework/691/' \
-                         'Homeworks/HW3/unzipped'
-# postgres connection:
-LCLconnR = psycopg2.connect("dbname='msan_691' user='postgres' "
-                            "host='localhost' password='postgres'")
-ProcessBart(tmpDir=tmpDir,
-            dataDir=dataDir,
-            SQLConn=LCLconnR,
-            schema='cls', table='bart')
-print 'Done.'
